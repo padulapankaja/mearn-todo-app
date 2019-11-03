@@ -81,11 +81,11 @@ class TodoCreate extends Component {
 
                              <div  className="form-group row">
                                 <div className="col-md-12">
-                                          <label> Description : <input className="form-control" type="text" name="description" value={this.state.todo_description}  onChange={this.onChangeTodoDescription}/></label>
+                                          <label> Description : <input className="form-control" type="text" name="description" value={this.state.todo_description}  onChange={this.onChangeTodoDescription}  required/></label>
                                  </div>
                             
                             <div className="col-md-12">
-                            <label>  Responible : <input className="form-control" type="text" name="resposible" value={this.state.todo_responsible}  onChange={this.onChangeTodoResponsible}/></label>
+                            <label>  Responible : <input className="form-control" type="text" name="resposible" value={this.state.todo_responsible}  onChange={this.onChangeTodoResponsible} required/></label>
                           </div>
                           
                           {/* <div className="col-md-12">
