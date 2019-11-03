@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-
+import axios from "axios";
 
 class TodoCreate extends Component {
     constructor(props) {
@@ -56,8 +55,29 @@ class TodoCreate extends Component {
         console.log(`Todo Responsible : ${this.state.todo_responsible}`);
         console.log(`Todo Completed : ${this.state.todo_completed}`);
 
+
+        const newTodo = {
+            todo_description: this.state.todo_description,
+            todo_responsibility:this.state.todo_responsible,
+            todo_priority:this.state.todo_priority,
+            todo_completed:this.state.todo_completed
+
+           
+        }
+
+
+
+
+
         
-        
+       
+        axios.post('http://localhost:4000/todos/add', newTodo)
+        .then(res => console.log(res.data));
+
+
+
+
+
 
 
         this.setState({
@@ -66,6 +86,7 @@ class TodoCreate extends Component {
             todo_priority : '',
             todo_completed : false
         });
+
     }
 
 
