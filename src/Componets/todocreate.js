@@ -78,19 +78,42 @@ class TodoCreate extends Component {
                 <div style={{marginTop:20}}>
                     <h3>Create New Todo</h3>
                     <form  onSubmit={this.onSubmit}>
-                            <label> Description : <input type="text" name="description" value={this.state.todo_description}  onChange={this.onChangeTodoDescription}/></label>
-                            <label>  Responible : <input type="text" name="resposible" value={this.state.todo_responsible}  onChange={this.onChangeTodoResponsible}/></label>
-                            <label> Description : <input type="text" name="description" value={this.state.todo_description}  onChange={this.onChangeTodoDescription}/></label>
-                            <label> Priority : <input className="form-check forn-check-inlne" type="radio"  name="priorityOption" id="priorityLow" value="Low" checked={this.state.todo_priority == 'Low'} onChange={this.onChangeTodoPriority} /> </label>
 
+                             <div  className="form-group row">
+                                <div className="col-md-12">
+                                          <label> Description : <input className="form-control" type="text" name="description" value={this.state.todo_description}  onChange={this.onChangeTodoDescription}/></label>
+                                 </div>
+                            
+                            <div className="col-md-12">
+                            <label>  Responible : <input className="form-control" type="text" name="resposible" value={this.state.todo_responsible}  onChange={this.onChangeTodoResponsible}/></label>
+                          </div>
+                          
+                          {/* <div className="col-md-12">
+                            <label> Description : <input className="form-control"  type="text" name="todo_priority" value={this.state.todo_description}  onChange={this.onChangeTodoDescription}/></label>
+                           
+                           </div> */}
+                           <div className="col-md-12">
+                           
+                            <label> Priority :</label>
+                                </div>
+                                <div className="col-md-12">
+                              
+                                       <input className="form-check form-check-inline"  type="radio" style={{marginRight:'0px'}}   name="priorityOption" id="priorityLow" value="High" checked={this.state.todo_priority == 'High'} onChange={this.onChangeTodoPriority} /> <label>High</label>
+                                       <input className="form-check form-check-inline" type="radio" style={{marginLeft:'20px', marginRight:'0px'}} name="priorityOption" id="priorityLow" value="Medium" checked={this.state.todo_priority == 'Medium'} onChange={this.onChangeTodoPriority} /> <label>Medium</label>
+                                       <input className="form-check form-check-inline" type="radio"   style={{marginLeft:'20px', marginRight:'0px'}} name="priorityOption" id="priorityLow" value="Low" checked={this.state.todo_priority == 'Low'} onChange={this.onChangeTodoPriority} /> <label>Low</label>
+                          
+                          
+                            </div>
+                          
+                            <br />
+                            <div className="col-md-12">
 
-                            <input className="form-check forn-check-inlne" type="radio"  name="priorityOption" id="priorityLow" value="High" checked={this.state.todo_priority == 'High'} onChange={this.onChangeTodoPriority} />
-                          
-                          
-                          
-                          
-                          
                             <input type="submit" value="Submit" />
+
+                            </div>
+                            </div>
+
+                            
                     </form>
                 </div>
             </div>
