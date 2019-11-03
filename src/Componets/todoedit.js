@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
+import axios from "axios";
 
 
 
 class TodoEdit extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-
+            todo_description : '' ,
+            todo_responsible : '',
+            todo_priority : '',
+            todo_completed : false
         };
 
         
 
     }
-
+    componentDidMount(){
+        axios.get()
+    }
     
 
     render() {
