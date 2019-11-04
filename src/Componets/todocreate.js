@@ -15,18 +15,18 @@ class TodoCreate extends Component {
 
 
         this.state = {
-                todo_description : '' ,
-                todo_responsible : '',
-                todo_priority : '',
-                todo_completed : false
+            todo_description: '',
+            todo_responsible: '',
+            todo_priority: '',
+            todo_completed: false
         };
 
-        
+
 
     }
 
 
-// changing functions
+    // changing functions
     onChangeTodoDescription(e) {
         this.setState({
             todo_description: e.target.value
@@ -50,7 +50,7 @@ class TodoCreate extends Component {
         e.preventDefault();
 
         console.log(`Form Submiteed : `);
-        console.log(`Todo Descrition  :   ${this.state.todo_description}` );
+        console.log(`Todo Descrition  :   ${this.state.todo_description}`);
         console.log(`Todo Priority :  ${this.state.todo_priority}`);
         console.log(`Todo Responsible : ${this.state.todo_responsible}`);
         console.log(`Todo Completed : ${this.state.todo_completed}`);
@@ -58,21 +58,21 @@ class TodoCreate extends Component {
 
         const newTodo = {
             todo_description: this.state.todo_description,
-            todo_responsibility:this.state.todo_responsible,
-            todo_priority:this.state.todo_priority,
-            todo_completed:this.state.todo_completed
+            todo_responsibility: this.state.todo_responsible,
+            todo_priority: this.state.todo_priority,
+            todo_completed: this.state.todo_completed
 
-           
+
         }
 
 
 
 
 
-        
-       
+
+
         axios.post('http://localhost:4000/todos/add', newTodo)
-        .then(res => console.log(res.data));
+            .then(res => console.log(res.data));
 
 
 
@@ -81,10 +81,10 @@ class TodoCreate extends Component {
 
 
         this.setState({
-            todo_description : '' ,
-            todo_responsible : '',
-            todo_priority : '',
-            todo_completed : false
+            todo_description: '',
+            todo_responsible: '',
+            todo_priority: '',
+            todo_completed: false
         });
 
     }
@@ -96,45 +96,42 @@ class TodoCreate extends Component {
     render() {
         return (
             <div className="container">
-                <div style={{marginTop:20}}>
+                <div style={{ marginTop: 20 }}>
                     <h3>Create New Todo</h3>
-                    <form  onSubmit={this.onSubmit}>
+                    <form onSubmit={this.onSubmit}>
 
-                             <div  className="form-group row">
-                                <div className="col-md-12">
-                                          <label> Description : <input className="form-control" type="text" name="description" value={this.state.todo_description}  onChange={this.onChangeTodoDescription}  required/></label>
-                                 </div>
-                            
+                        <div className="form-group row">
                             <div className="col-md-12">
-                            <label>  Responible : <input className="form-control" type="text" name="resposible" value={this.state.todo_responsible}  onChange={this.onChangeTodoResponsible} required/></label>
-                          </div>
-                          
-                          {/* <div className="col-md-12">
-                            <label> Description : <input className="form-control"  type="text" name="todo_priority" value={this.state.todo_description}  onChange={this.onChangeTodoDescription}/></label>
-                           
-                           </div> */}
-                           <div className="col-md-12">
-                           
-                            <label> Priority :</label>
-                                </div>
-                                <div className="col-md-12">
-                              
-                                       <input className="form-check form-check-inline"  type="radio" style={{marginRight:'0px'}}   name="priorityOption" id="priorityLow" value="High" checked={this.state.todo_priority == 'High'} onChange={this.onChangeTodoPriority} /> <label>High</label>
-                                       <input className="form-check form-check-inline" type="radio" style={{marginLeft:'20px', marginRight:'0px'}} name="priorityOption" id="priorityLow" value="Medium" checked={this.state.todo_priority == 'Medium'} onChange={this.onChangeTodoPriority} /> <label>Medium</label>
-                                       <input className="form-check form-check-inline" type="radio"   style={{marginLeft:'20px', marginRight:'0px'}} name="priorityOption" id="priorityLow" value="Low" checked={this.state.todo_priority == 'Low'} onChange={this.onChangeTodoPriority} /> <label>Low</label>
-                          
-                          
+                                <label> Description : <input className="form-control" type="text" name="description" value={this.state.todo_description} onChange={this.onChangeTodoDescription} required /></label>
                             </div>
-                          
+
+                            <div className="col-md-12">
+                                <label>  Responible : <input className="form-control" type="text" name="resposible" value={this.state.todo_responsible} onChange={this.onChangeTodoResponsible} required /></label>
+                            </div>
+
+
+                            <div className="col-md-12">
+
+                                <label> Priority :</label>
+                            </div>
+                            <div className="col-md-12">
+
+                                <input className="form-check form-check-inline" type="radio" style={{ marginRight: '0px' }} name="priorityOption" id="priorityLow" value="High" checked={this.state.todo_priority == 'High'} onChange={this.onChangeTodoPriority} /> <label>High</label>
+                                <input className="form-check form-check-inline" type="radio" style={{ marginLeft: '20px', marginRight: '0px' }} name="priorityOption" id="priorityLow" value="Medium" checked={this.state.todo_priority == 'Medium'} onChange={this.onChangeTodoPriority} /> <label>Medium</label>
+                                <input className="form-check form-check-inline" type="radio" style={{ marginLeft: '20px', marginRight: '0px' }} name="priorityOption" id="priorityLow" value="Low" checked={this.state.todo_priority == 'Low'} onChange={this.onChangeTodoPriority} /> <label>Low</label>
+
+
+                            </div>
+
                             <br />
                             <div className="col-md-12">
 
-                            <input type="submit" value="Submit" />
+                                <input type="submit" value="Submit" />
 
                             </div>
-                            </div>
+                        </div>
 
-                            
+
                     </form>
                 </div>
             </div>

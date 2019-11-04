@@ -13,7 +13,7 @@ const Todo = props => (
         <td className={props.todo.todo_completed ? 'completed' : '' }>{props.todo.todo_priority}</td>
        
         <td>
-                <Link to={"/edit" +props.todo._id} >Edit </Link>
+                <Link to={"/edit/" +props.todo._id} >Edit </Link>
         </td>
     </tr>
 )
