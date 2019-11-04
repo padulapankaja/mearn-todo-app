@@ -66,7 +66,7 @@ class TodoEdit extends Component {
 
 
     onSubmit(e){
-        e.preventDefault();
+        //e.preventDefault();
 
         const object = {
             todo_description:this.state.todo_description,
@@ -79,7 +79,10 @@ class TodoEdit extends Component {
         .then(res=> console.log(res.data));
 
 
-        this.props.history.push('/')
+        this.props.history.push('/');
+
+
+
 
     }
 

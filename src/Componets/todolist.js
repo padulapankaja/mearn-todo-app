@@ -7,7 +7,7 @@ import axios from "axios";
 
 const Todo = props => (
     <tr>
-        {/* <td>{this.state.todos.map.key}</td> */}
+        <td>{props.todo.index}</td>
         <td className={props.todo.todo_completed ? 'completed' : '' }>{props.todo.todo_description}</td>
         <td className={props.todo.todo_completed ? 'completed' : '' }>{props.todo.todo_responsibility}</td>
         <td className={props.todo.todo_completed ? 'completed' : '' }>{props.todo.todo_priority}</td>
@@ -40,6 +40,8 @@ class TodoList extends Component {
 
     todoList(){
           const newmap = this.state.todos.map(function(currentTodo, i){
+              var _todo = currentTodo;
+              _todo.index = i+1;
              const todoItems =  <Todo todo={currentTodo} key={i} />;
              return todoItems;
          })
@@ -56,7 +58,7 @@ class TodoList extends Component {
              <table className="table">
                     <thead className="thead-dark">
                         <tr>
-                        {/* <th scope="col">No</th> */}
+                        <th scope="col">No</th>
                         <th scope="col">Description</th>    
                         <th scope="col">Responsibilty</th>
                         <th scope="col">Priority</th>
